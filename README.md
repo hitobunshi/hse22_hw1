@@ -30,6 +30,12 @@ mkdir multiqc
 multiqc -o multiqc fastqc
 ```
 
+***Отчеты***
+
+![](img/multiqc_report.png)
+
+![](img/multiqc_graph.png)
+
 ***Обрезание чтений с помощью platanus_trim***
 ```
 platanus_trim pairedend1.fastq pairedend2.fastq
@@ -49,6 +55,12 @@ mkdir multiqc
 multiqc -o multiqc fastqc
 ```
 
+***Отчеты***
+
+![](img/multiqc_trimmed_report.png)
+
+![](img/multiqc_trimmed_graph.png)
+
 ***Сбор контиг***
 ```
 platanus assemble -o Poil -f pairedend1.fastq.trimmed pairedend2.fastq.trimmed
@@ -64,3 +76,7 @@ platanus scaffold -o Poil -c Poil_contig.fa -IP1 pairedend1.fastq.trimmed paired
 platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 pairedend1.fastq.trimmed pairedend2.fastq.trimmed -OP2 matepairs1.fastq.int_trimmed matepairs2.fastq.int_trimmed
 rm pairedend1.fastq.trimmed pairedend2.fastq.trimmed matepairs1.fastq.int_trimmed matepairs2.fastq.int_trimmed
 ```
+
+**Ссылка на Jupyter Notebook**
+
+[вот она](src/analyze.ipynb)
